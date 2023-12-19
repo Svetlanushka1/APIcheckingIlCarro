@@ -9,6 +9,7 @@ import okhttp3.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import property.ConfigProperties;
 
 import java.io.IOException;
 
@@ -55,7 +56,7 @@ public class LoginTests {
 
     }
 
-    /* @Test
+  @Test
 
       public void loginPropertiesPositive() throws IOException {
 
@@ -65,15 +66,16 @@ public class LoginTests {
 
 
           //1 create the request
+
           AuthRequestDTO authRequestDTO = AuthRequestDTO.builder()
-                  .username("haifa@gmail.com")
-                  .password("Haifa082022$")
+                  .username(ConfigProperties.getProperty("username"))
+                  .password(ConfigProperties.getProperty("password"))
                   .build();
           //2 send this request to the server
           RequestBody requestBody = RequestBody.create(gson.toJson(authRequestDTO), JSON);
 
           Request request = new Request.Builder()
-                  .url("src/test/resources/datalogin.csv")
+                  .url(ConfigProperties.getProperty("url"))
                   .post(requestBody)
                   .build();
 
@@ -95,7 +97,7 @@ public class LoginTests {
           }
 
 
-      }*/
+      }
     @Test(groups = {"smoke"}, dataProvider = "loginCSV",dataProviderClass = DataProviderLogin.class)
     public void loginCSVPositive(AuthRequestDTO authRequestDTO) throws IOException {
 
