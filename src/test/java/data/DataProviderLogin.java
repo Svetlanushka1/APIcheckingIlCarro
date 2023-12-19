@@ -33,5 +33,26 @@ public class DataProviderLogin {
         }
         return list.iterator();
     }
+    @DataProvider
+    public Iterator<Object[]> loginCSV_negative() {
+        List<Object[]> list = new ArrayList<>();
+        String path = "src/test/resources/dataloginnegative.csv";
+        try(BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            String line = reader.readLine();
+            while(line != null) {
+                String[] split = line.split(",");
+                list.add(new Object[]{
+                        AuthRequestDTO.builder()
+                                .username(split[0])
+                                .password(split[1])
+                                .build()
+                });
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return list.iterator();
+    }
 
 }
