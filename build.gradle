@@ -25,3 +25,22 @@ dependencies {
 test {
     useTestNG()
 }
+task reg(type: Test){
+    useTestNG {
+        def suite = System.getProperty('suite', '')
+        if (suite.equals('smoke')) {
+            suites 'src/test/resources/smoke.xml'
+        } else {
+            suites 'src/test/resources/testng.xml'
+        }
+
+        def groups = System.getProperty('groups', '')
+        if (groups != null) {
+            includeGroups(groups)
+        }
+
+        if(project.hasProperty('target')){
+            systemProperty 'target', "${target}"
+        }
+    }
+}

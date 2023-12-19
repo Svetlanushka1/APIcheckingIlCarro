@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="smoke">
+    <test name="smoke">
+        <classes>
+            <class name="testsAPI.LoginTests"/>
+        </classes>
+    </test>
+</suite>
