@@ -75,7 +75,7 @@ public class LoginTests {
           RequestBody requestBody = RequestBody.create(gson.toJson(authRequestDTO), JSON);
 
           Request request = new Request.Builder()
-                  .url(ConfigProperties.getProperty("url"))
+                  .url("https://ilcarro-backend.herokuapp.com/v1/user/login/usernamepassword")
                   .post(requestBody)
                   .build();
 

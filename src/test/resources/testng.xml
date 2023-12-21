@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Production">
+    <test name="smoke">
+        <classes>
+            <class name="testsAPI.LoginTests"/>
+            <class name="testsAPI.RegistrationTests"/>
+            <class name="testsAPI.AddCarTests"/>
+        </classes>
+    </test>
+    <!--    <test name="regression">-->
+    <!--        <classes>-->
+    <!--            <class name="tests.RegistrationTests"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+</suite>
