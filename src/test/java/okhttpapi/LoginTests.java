@@ -1,4 +1,4 @@
-package testsAPI;
+package okhttpapi;
 
 import com.google.gson.Gson;
 import data.DataProviderLogin;
@@ -7,7 +7,6 @@ import dto.AuthResponseDTO;
 import dto.ErrorDTO;
 import okhttp3.*;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import property.ConfigProperties;
 

@@ -1,4 +1,4 @@
-package testsAPI;
+package okhttpapi;
 
 public class AddCarTests {
 }

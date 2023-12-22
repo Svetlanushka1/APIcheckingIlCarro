@@ -2,9 +2,9 @@
 <suite name="Production">
     <test name="smoke">
         <classes>
-            <class name="testsAPI.LoginTests"/>
-            <class name="testsAPI.RegistrationTests"/>
-            <class name="testsAPI.AddCarTests"/>
+            <class name="okhttpapi.LoginTests"/>
+            <class name="okhttpapi.RegistrationTests"/>
+            <class name="okhttpapi.AddCarTests"/>
         </classes>
     </test>
     <!--    <test name="regression">-->

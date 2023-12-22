@@ -2,7 +2,7 @@
 <suite name="smoke">
     <test name="smoke">
         <classes>
-            <class name="testsAPI.LoginTests"/>
+            <class name="okhttpapi.LoginTests"/>
         </classes>
     </test>
 </suite>
