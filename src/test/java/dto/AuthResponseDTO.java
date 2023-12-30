@@ -1,14 +1,13 @@
 package dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Setter
 @Getter
 @Builder
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class AuthResponseDTO {
     /*
     TokenDto{

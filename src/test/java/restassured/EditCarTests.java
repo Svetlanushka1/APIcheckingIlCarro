@@ -3,12 +3,21 @@ package restassured;
 import dto.CarDTO;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.Random;
+
 import static org.hamcrest.Matchers.*;
 
 public class EditCarTests extends helpers.RestAssuredHelper{
-   /* @Test
-    public void addNewCarPositive() {
+    Random random = new Random();
+    int i = random.nextInt(10);
+    CarDTO carDTO;
+    String endPointCarEdit = "/v1/cars/edit";
+    String serialNumber = "";
+    @BeforeMethod
+    public void precondition(){
         CarDTO car = CarDTO.builder()
                 .serialNumber("")
                 .city("")
@@ -16,6 +25,10 @@ public class EditCarTests extends helpers.RestAssuredHelper{
                 .manufacture("")
                 .pricePerDay(Double.parseDouble(""))
                 .build();
+    }
+   @Test
+    public void addNewCarPositive() {
+
 
 
         RestAssured
@@ -25,13 +38,13 @@ public class EditCarTests extends helpers.RestAssuredHelper{
                 .log().all()
                 .contentType(ContentType.JSON)
                 .header("", "Bearer" + getToken())
-                .body(car)
-                .put(baseURI + apiEditCarURI)
+                .body(carDTO)
+                .put(BASE_URI + endPointCarEdit)
                 .then()
                 .log().all()
-                .satatusCode(200)
+                .statusCode(200)
                 .assertThat().body("message",emptyString());
         ;
 
-    }*/
+    }
 }

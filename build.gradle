@@ -20,7 +20,8 @@ dependencies {
 //
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
-    implementation 'io.rest-assured:rest-assured:5.3.2'
+  //  implementation 'io.rest-assured:rest-assured:5.3.2'
+    implementation 'com.jayway.restassured:rest-assured:2.9.0'
 }
 
 test {

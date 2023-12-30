@@ -9,7 +9,7 @@ public class RestAssuredHelper {
     String apiLoginURI = "/v1/user/login/usernamepassword";
     public String authHeader = "Authorizations";
     String endPointCarAdd = "/v1/cars";
-    String endPointCarEdit = "/v1/cars/edit";
+   // String endPointCarEdit = "/v1/cars/edit";
     String endPointCarSearch = "/v1/cars/search";
    // String endPointGetCars = "/v1/cars/my";
     String endPointCarBooking = "/v1/cars/{serialNumber}/booking";

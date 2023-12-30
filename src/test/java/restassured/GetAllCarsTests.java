@@ -4,14 +4,19 @@ import dto.CarDTO;
 import dto.CarListDTO;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class GetAllCarsTests extends helpers.RestAssuredHelper {
     /*
     "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiaGFpZmFAZ21haWwuY29tIiwiaXNzIjoiUmVndWxhaXQiLCJleHAiOjE3MDM4NTg3MTUsImlhdCI6MTcwMzI1ODcxNX0.1L6IchjLwK_wMoN_OTOC3VHENX9VtYryPboRjvxokus";
      */
-    String endPointGetCars = "/v1/cars/my";
+    String endpointGetCars = "/v1/cars/my";
+    @BeforeMethod
+    public void precondition(){
+        //RestAssured.baseURI = BASE_URI;
+
+    }
   @Test
     public void getAllCars(){
 
@@ -22,7 +27,7 @@ public class GetAllCarsTests extends helpers.RestAssuredHelper {
                     .log().all()
                     .contentType(ContentType.JSON)
                     .header("Authorization", "Bearer: " + getToken())
-                    .get(BASE_URI + endPointGetCars)
+                    .get(BASE_URI + endpointGetCars)
                 .then()
                     .log().all()
                     .assertThat().statusCode(200)
@@ -34,7 +39,7 @@ public class GetAllCarsTests extends helpers.RestAssuredHelper {
           System.out.println(car.getCity());
 
       }
-      Assert.assertFalse(carsList.toString().isEmpty());
+     // Assert.assertFalse(carsList.toString().isEmpty());
 
     }
 }

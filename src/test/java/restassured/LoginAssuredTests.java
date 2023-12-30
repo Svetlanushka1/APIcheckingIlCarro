@@ -5,6 +5,7 @@ import helpers.RestAssuredHelper;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
+import property.ConfigProperties;
 
 import static org.hamcrest.Matchers.anything;
 
@@ -50,9 +51,13 @@ public class LoginAssuredTests extends helpers.RestAssuredHelper {
     @Test
     public void loginPositiveUsingHelper(){
 
-        AuthRequestDTO loginBody = AuthRequestDTO.builder()
+      /*  AuthRequestDTO loginBody = AuthRequestDTO.builder()
                 .username("haifa@gmail.com")
                 .password("Haifa082022$")
+                .build();*/
+        AuthRequestDTO loginBody = AuthRequestDTO.builder()
+                .username(ConfigProperties.getProperty("username"))
+                .password(ConfigProperties.getProperty("password"))
                 .build();
 
         RestAssured
