@@ -1,17 +1,6 @@
 package restassured;
 
-import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.http.ContentType;
-import dto.CarDTO;
-
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import java.util.Random;
-
-import static org.hamcrest.Matchers.*;
-
-public class EditCarTests extends helpers.RestAssuredHelper{
+public class EditCarTests {
  /*   Random random = new Random();
     int i = random.nextInt(10);
     CarDTO carDTO;

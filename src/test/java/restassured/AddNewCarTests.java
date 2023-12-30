@@ -1,20 +1,32 @@
 package restassured;
 
 
+import dto.AddNewCarDTO;
+import org.testng.annotations.Test;
 
-public class AddNewCarTests extends helpers.RestAssuredHelper {
-  /*  @Test
+public class AddNewCarTests extends BaseApiTest{
+  @Test
     public void addNewCarPositive() {
-        CarDTO car = CarDTO.builder()
-                .serialNumber("")
-                .city("")
-                .model("")
-                .manufacture("")
-                .pricePerDay(Double.parseDouble(""))
-                .build();
+      String serNumber = randomUtils.generateDigitsString(12);
+      AddNewCarDTO addNewCar = AddNewCarDTO.builder()
+              .serialNumber(serNumber)
+              .manufacture("qa40")
+              .model("corsa")
+              .year(1990)
+              .fuel("Petrol")
+              .seats(2)
+              .carClass("ads")
+              .pricePerDay(9)
+              .about("fff")
+              .city("Tel Aviv")
+              .build();
+      softAssert.assertEquals(carsApi.getStatusCodeResponseAddNewCar(addNewCar, token), 200);
+      softAssert.assertEquals(carsApi.getMessageResponseAddNewCar(addNewCar, token),
+              "Car added successfully");
+      softAssert.assertAll();
 
 
-        RestAssured
+     /*   RestAssured
                 .given()
                 .log().all()
                 .when()
@@ -30,5 +42,6 @@ public class AddNewCarTests extends helpers.RestAssuredHelper {
         ;
 
     }*/
+  }
 
 }

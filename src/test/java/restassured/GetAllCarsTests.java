@@ -1,7 +1,7 @@
 package restassured;
 
 
-public class GetAllCarsTests extends helpers.RestAssuredHelper {
+public class GetAllCarsTests {
     /*
     "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiaGFpZmFAZ21haWwuY29tIiwiaXNzIjoiUmVndWxhaXQiLCJleHAiOjE3MDM4NTg3MTUsImlhdCI6MTcwMzI1ODcxNX0.1L6IchjLwK_wMoN_OTOC3VHENX9VtYryPboRjvxokus";
      */
