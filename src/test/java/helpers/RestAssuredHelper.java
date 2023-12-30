@@ -1,11 +1,9 @@
 package helpers;
 
-import dto.AuthRequestDTO;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 
-public class RestAssuredHelper {
-    public String BASE_URI = "https://ilcarro-backend.herokuapp.com";
+
+public class RestAssuredHelper {/*
+
     String apiLoginURI = "/v1/user/login/usernamepassword";
     public String authHeader = "Authorizations";
     String endPointCarAdd = "/v1/cars";
@@ -19,8 +17,9 @@ AuthenticationBodyDto{
 username*	string
 password*	string
 pattern: ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$#^&*!])(?=.*[a-zA-Z]).{8,}$
-}
- */
+}/*
+/*
+
         AuthRequestDTO loginBody = AuthRequestDTO.builder()
                 .username("haifa@gmail.com")
                 .password("Haifa082022$").build();
@@ -38,5 +37,5 @@ pattern: ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$#^&*!])(?=.*[a-zA-Z]).{8,}$
                     .extract().response().jsonPath().getString("token");
         System.out.println("token: " + token);
         return token;
-    }
+    }*/
 }

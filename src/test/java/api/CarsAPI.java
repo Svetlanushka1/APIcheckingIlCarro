@@ -64,4 +64,4 @@ public class CarsAPI extends BaseAPI{
         return responseDeleteCar.then().extract().path("message");
     }
 }
-}
+

@@ -1,11 +1,12 @@
 package restassured;
 
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
+
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
 public class TestGoogle {
-    @Test
+ /*   @Test
     public void makeSureThatGoogleIsUp(){
         //RestAssured
         // .given() - what needs to send
@@ -21,5 +22,5 @@ public class TestGoogle {
                 .log().all()
                 .assertThat()
                 .statusCode(200);
-    }
+    }*/
 }

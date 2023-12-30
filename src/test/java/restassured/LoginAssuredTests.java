@@ -1,16 +1,16 @@
 package restassured;
 
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.http.ContentType;
 import dto.AuthRequestDTO;
-import helpers.RestAssuredHelper;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import property.ConfigProperties;
 
 import static org.hamcrest.Matchers.anything;
 
-public class LoginAssuredTests extends helpers.RestAssuredHelper {
- /*   @Test
+public class LoginAssuredTests extends BaseApiTest {
+
+  @Test
     public void loginPositiveStep1(){
         String loginBody = "{\n" +
                 "   \"username\": \"abc@def.com\", \n" +
@@ -47,15 +47,11 @@ public class LoginAssuredTests extends helpers.RestAssuredHelper {
                 .then()
                 .log().ifStatusCodeIsEqualTo(200)
                 .assertThat().body("token", anything());
-    }*/
-    @Test
+    }
+   @Test
     public void loginPositiveUsingHelper(){
 
-      /*  AuthRequestDTO loginBody = AuthRequestDTO.builder()
-                .username("haifa@gmail.com")
-                .password("Haifa082022$")
-                .build();*/
-        AuthRequestDTO loginBody = AuthRequestDTO.builder()
+          AuthRequestDTO loginBody = AuthRequestDTO.builder()
                 .username(ConfigProperties.getProperty("username"))
                 .password(ConfigProperties.getProperty("password"))
                 .build();
@@ -72,5 +68,8 @@ public class LoginAssuredTests extends helpers.RestAssuredHelper {
                 .extract().response().jsonPath().getString("token");
                     //.assertThat().body("token", anything());
     }
+    /*
+    eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiaGFpZmFAZ21haWwuY29tIiwiaXNzIjoiUmVndWxhaXQiLCJleHAiOjE3MDQ1MjkwOTcsImlhdCI6MTcwMzkyOTA5N30.ZtFCQi2WsAXeJLIgi0j5zU-QOMHMyM-pIkQ23aFGJ1g
+     */
 
 }

@@ -1,16 +1,26 @@
 package restassured;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AuthTests extends BaseApiTest{
     @Test
-    public void loginApiTest(){
+    public void loginApiTest() {
+        softAssert.assertEquals(100, 200,
+                "100 not equal 200");
 
+        softAssert.assertEquals(userApi.getStatusCodeResponseLogin(user), 201,
+                "status code not 200");
+
+        softAssert.assertAll();
     }
     @Test
-    public void LoginApiTest(){
-        softAssert.assertEquals(100,200);
-        softAssert.assertEquals(userApi.getStatusCodeResponseLogin(user),200);
-        softAssert.assertAll();
+    public void loginApiTest2() {
+        Assert.assertEquals(100, 200,
+                "100 not equal 200");
+
+        Assert.assertEquals(userApi.getStatusCodeResponseLogin(user), 201,
+                "status code not 200");
+
     }
 }

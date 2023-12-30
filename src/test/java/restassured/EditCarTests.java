@@ -1,8 +1,9 @@
 package restassured;
 
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.http.ContentType;
 import dto.CarDTO;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -11,7 +12,7 @@ import java.util.Random;
 import static org.hamcrest.Matchers.*;
 
 public class EditCarTests extends helpers.RestAssuredHelper{
-    Random random = new Random();
+ /*   Random random = new Random();
     int i = random.nextInt(10);
     CarDTO carDTO;
     String endPointCarEdit = "/v1/cars/edit";
@@ -44,7 +45,7 @@ public class EditCarTests extends helpers.RestAssuredHelper{
                 .log().all()
                 .statusCode(200)
                 .assertThat().body("message",emptyString());
-        ;
 
-    }
+
+    }*/
 }

@@ -1,10 +1,11 @@
 package api;
 
+import com.jayway.restassured.response.Response;
 import dto.AuthResponseDTO;
 import dto.UserDTO;
-import io.restassured.response.Response;
 
-import static io.restassured.RestAssured.given;
+import static com.jayway.restassured.RestAssured.given;
+
 
 public class UserAPI extends BaseAPI{
 
